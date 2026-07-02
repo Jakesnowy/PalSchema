@@ -18,6 +18,9 @@ jobs:
         submodules: recursive 
         token: ${{ secrets.EPIC_GITHUB_TOKEN }}
 
+    - name: Setup MSVC Environment
+      uses: ilammy/msvc-dev-cmd@v1
+
     - name: Configure CMake
       run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Game__Shipping__Win64
 
